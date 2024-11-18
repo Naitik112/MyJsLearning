@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    // const sayHitesh = function(){
+    //     console.log("Hitesh");
+    // }
+    
+   
+    
+
+    // const changeMe = setTimeout(changeText, 2000)
+
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //     clearTimeout(changeMe)
+    //     console.log("STOPPED")
+    // })
+
+    const sayDate = function(str){
+        let d=new Date();
+        document.querySelector('h1').innerHTML = d.toLocaleTimeString()
+        }
+
+    let setIntervalId ;
+    
+const stopbuttn=document.querySelector('#stop')
+const startbuttn=document.querySelector('#start')
+
+
+stopbuttn.addEventListener('click',function()
+{
+   if(setIntervalId)
+   {
+    clearInterval(setIntervalId)
+    console.log('stop buttn')
+    setIntervalId=null
+   }
+    
+})
+
+startbuttn.addEventListener('click',function()
+{
+    if(!setIntervalId)
+   {
+    setIntervalId=setInterval(sayDate,1000)
+    console.log('start buttn')
+   }
+
+})
+
+    
+
+    
+</script>
+</html>
